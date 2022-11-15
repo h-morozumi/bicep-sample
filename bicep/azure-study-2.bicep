@@ -189,10 +189,6 @@ resource basPip 'Microsoft.Network/publicIPAddresses@2022-05-01' = {
 resource basHost 'Microsoft.Network/bastionHosts@2022-05-01' = {
   name: azureBastionHostName
   location: location
-  // dependsOn: [
-  //   vnet
-  //   basPip
-  // ]
   properties: {
     ipConfigurations: [
       {
@@ -257,9 +253,6 @@ resource linuxNic 'Microsoft.Network/networkInterfaces@2022-05-01' = {
 resource win 'Microsoft.Compute/virtualMachines@2022-08-01' = {
   name: windowsVirtualMachineName
   location: location
-  // dependsOn: [
-  //   winNic
-  // ]
   zones: [
     '1'
   ]
@@ -299,9 +292,6 @@ resource win 'Microsoft.Compute/virtualMachines@2022-08-01' = {
 resource linux 'Microsoft.Compute/virtualMachines@2022-08-01' = {
   name: linuxVirtualMachineName
   location: location
-  // dependsOn: [
-  //   linuxNic
-  // ]
   zones: [
     '2'
   ]
